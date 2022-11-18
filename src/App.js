@@ -1,15 +1,22 @@
 import "./App.css";
+import Weather from "./Weather";
 
 function App() {
   return (
     <div className="App">
       <div className="conteiner">
-        <div className="col-3">
-          <h1>Hi there</h1>
-          <button type="button" class="btn btn-primary">
-            Primary
-          </button>
-        </div>
+        <Weather />
+        <footer>
+          This project was coded by Anastasiia Boiko and it is{" "}
+          <a
+            href="https://github.com/AnastasiaBokinsky/project-react-weather.git"
+            rel="noreferrer"
+          >
+            {" "}
+            onen-sourced
+          </a>{" "}
+          on GitHub
+        </footer>
       </div>
     </div>
   );
