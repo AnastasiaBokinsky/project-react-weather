@@ -16,13 +16,12 @@ export default function Weather(props) {
       name: response.data.name,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      iconUrl: ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
   }
   function search() {
-    const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
+    const apiKey = "7784a4cd4aa2e0c25ead7bd96d585b8a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
     return "loading...";
