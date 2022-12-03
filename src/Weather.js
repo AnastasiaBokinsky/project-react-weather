@@ -7,17 +7,20 @@ import axios from "axios";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
       temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
       name: response.data.name,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   function search() {
